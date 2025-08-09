@@ -1,0 +1,1 @@
+# TrendWise - AI-Powered Inventory Demand Forecaster
