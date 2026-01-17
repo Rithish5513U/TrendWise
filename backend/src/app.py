@@ -29,5 +29,5 @@ app.register_blueprint(alerts_bp)
 def home():
     return "Trendwise Backend is running!"
 
-if __name__ == "__main__":
-    app.run(debug=True, port=8080)
+# if __name__ == "__main__":
+#     app.run(debug=True, port=8080)
