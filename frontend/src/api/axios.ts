@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance
 const axiosInstance = axios.create({
-  baseURL: '',
+  baseURL: import.meta.env.VITE_API_URL || 'https://trendwise-nmuc.onrender.com',
   // Don't set default Content-Type - let browser handle it for FormData
 });
 
