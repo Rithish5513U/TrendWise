@@ -1,0 +1,12 @@
+flask
+flask-cors
+flask-jwt-extended
+pymysql
+python-dotenv
+passlib
+pyjwt
+lightgbm
+pandas
+numpy
+scikit-learn
+google-genai
