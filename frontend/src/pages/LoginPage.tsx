@@ -10,7 +10,7 @@ import {
   CircularProgress,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axiosInstance from '../api/axios';
 import { useAppDispatch } from '../store/hooks';
 import { setToken } from '../store/authSlice';
 import FlowerIcon from '../components/FlowerIcon';
@@ -40,7 +40,7 @@ export default function LoginPage() {
     setError('');
 
     try {
-      const response = await axios.post('/auth/login', formData);
+      const response = await axiosInstance.post('/auth/login', formData);
       dispatch(setToken(response.data.token));
       navigate('/dashboard');
     } catch (err: any) {

@@ -14,7 +14,7 @@ import {
   DialogActions,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axiosInstance from '../api/axios';
 import FlowerIcon from '../components/FlowerIcon';
 import AuthVisualPanel from '../components/AuthVisualPanel';
 
@@ -51,7 +51,7 @@ export default function SignupPage() {
     setError('');
 
     try {
-      await axios.post('/api/alerts/send-otp', { email: formData.email });
+      await axiosInstance.post('/api/alerts/send-otp', { email: formData.email });
       setOtpSent(true);
       setShowOtpDialog(true);
       setError('');
@@ -72,7 +72,7 @@ export default function SignupPage() {
     setError('');
 
     try {
-      await axios.post('/api/alerts/verify-otp', {
+      await axiosInstance.post('/api/alerts/verify-otp', {
         email: formData.email,
         otp: otp,
       });
@@ -98,7 +98,7 @@ export default function SignupPage() {
     setError('');
 
     try {
-      await axios.post('/auth/register', formData);
+      await axiosInstance.post('/auth/register', formData);
       setSuccess(true);
       setTimeout(() => navigate('/login'), 2000);
     } catch (err: any) {
